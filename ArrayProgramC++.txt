@@ -1,0 +1,47 @@
+#include <iostream>
+
+using namespace std;
+
+void arrayfunc(int []);
+void totalfunc(int []);
+
+
+
+void arrayfunc(int arr [8])
+{
+    int x, i;
+    
+    cout << "Enter 8 numbers one at a time." << endl;
+    for(i=0;i<8;i++)
+    cin >> arr[i]; 
+    
+    cout << "Enter the specific position of the array to see that value: " << endl;
+    cin >> x;
+    cout << "Value: " << arr[x] << endl;
+   
+}
+
+void totalfunc(int arr [8])
+{
+    int sum = 0, i;
+    for(i=0;i<8;i++){
+        sum += arr[i];
+    }
+    cout << "The sum of the array is: " << sum << endl;
+    
+}
+
+int main()
+{
+    int arr[8], newpos, newval;
+    arrayfunc(arr);
+    totalfunc(arr);
+    cout << "Select a position in the array to change: " << endl;
+    cin >> newpos;
+    cout << "Select a new value for that position: " << endl;
+    cin >> newval;
+    arr[newpos] = newval;
+    totalfunc(arr);
+   
+    return 0;
+}
